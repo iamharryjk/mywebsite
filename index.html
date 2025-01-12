@@ -1,110 +1,1270 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How Was Your Day?</title>
-    <style>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="AI-generated website">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="index, follow">
+      
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+      
+      <!-- {headerScripts} -->
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+             colors: {
+                primary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Base Styles -->
+      <style>
+
+      * {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Webkit browsers like Chrome, Safari, newer Edge */
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 0px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: #666;
+        }
+
+        /* Remove tap highlight on mobile */
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+          -webkit-tap-highlight-color: transparent;
         }
+
+        /* Improve text rendering */
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
+
+        /* Focus outline styles */
+        :focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: 2px;
         }
-        h2 {
-            font-size: 26px;
-            color: #333;
-            margin-bottom: 15px;
+
+        /* Print styles */
+        @media print {
+          .no-print {
+            display: none !important;
+          }
+          
+          a[href]:after {
+            content: " (" attr(href) ")";
+          }
         }
-        p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
+      </style>
+
+      <!-- Enhanced Image Handler -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                  const tempImage = new Image();
+                  tempImage.onload = () => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                  };
+                  tempImage.src = img.dataset.src;
+                  img.removeAttribute('data-src');
+                  observer.unobserve(img);
+                }
+              }
+            });
+          }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+          });
+
+          const loadImage = (img) => {
+            if ('loading' in HTMLImageElement.prototype) {
+              img.loading = 'lazy';
+            }
+            
+            img.classList.add('transition-opacity', 'duration-300', 'opacity-0');
+            
+            img.onerror = () => {
+              const width = img.getAttribute('width') || img.clientWidth || 300;
+              const height = img.getAttribute('height') || img.clientHeight || 200;
+              img.src = `https://placehold.co/${width}x${height}/DEDEDE/555555?text=Image+Unavailable`;
+              img.alt = 'Image unavailable';
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100', 'error-image');
+            };
+
+            if (img.dataset.src) {
+              imageObserver.observe(img);
+            } else {
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100');
+            }
+          };
+
+          document.querySelectorAll('img[data-src], img:not([data-src])').forEach(loadImage);
+
+          // Watch for dynamically added images
+          new MutationObserver((mutations) => {
+            mutations.forEach(mutation => {
+              mutation.addedNodes.forEach(node => {
+                if (node.nodeType === 1) {
+                  if (node.tagName === 'IMG') {
+                    loadImage(node);
+                  }
+                  node.querySelectorAll('img').forEach(loadImage);
+                }
+              });
+            });
+          }).observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        });
+
+        // Performance monitoring
+        if ('performance' in window && 'PerformanceObserver' in window) {
+          // Create performance observer
+          const observer = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            entries.forEach((entry) => {
+              if (entry.entryType === 'largest-contentful-paint') {
+                // console.log(`LCP: ${entry.startTime}ms`);
+              }
+              if (entry.entryType === 'first-input') {
+                // console.log(`FID: ${entry.processingStart - entry.startTime}ms`);
+              }
+              if (entry.entryType === 'layout-shift') {
+                // console.log(`CLS: ${entry.value}`);
+              }
+            });
+          });
+
+          // Observe performance metrics
+          observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+          // Log basic performance metrics
+          window.addEventListener('load', () => {
+            const timing = performance.getEntriesByType('navigation')[0];
+            console.log({
+              'DNS Lookup': timing.domainLookupEnd - timing.domainLookupStart,
+              'TCP Connection': timing.connectEnd - timing.connectStart,
+              'DOM Content Loaded': timing.domContentLoadedEventEnd - timing.navigationStart,
+              'Page Load': timing.loadEventEnd - timing.navigationStart
+            });
+          });
         }
-        textarea {
-            width: 100%;
-            height: 100px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        button {
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: transform 0.2s ease, background-color 0.3s ease;
-            margin: 5px;
-        }
-        button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-        #output {
-            margin-top: 20px;
-            font-size: 16px;
-            color: #444;
-            text-align: left;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Hi there!</h2>
-        <p>How was your day?</p>
-        <textarea id="dayInput" placeholder="Share something about your day..."></textarea>
-        <div>
-            <button onclick="showMotivation()">Submit</button>
-            <button onclick="closeApp()">Close</button>
+
+        // Handle offline/online status
+        window.addEventListener('online', () => {
+          document.body.classList.remove('offline');
+          console.log('Connection restored');
+        });
+        
+        window.addEventListener('offline', () => {
+          document.body.classList.add('offline');
+          console.log('Connection lost');
+        });
+      </script>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Header -->
+      <header class="relative z-50 bg-white dark:bg-gray-900">
+        <!-- Header content goes here -->
+      </header>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative ">
+        <!-- Content will be injected here -->
+      </main>
+
+      <!-- {bodyScripts} -->
+
+   </body>
+</html><element id="b87df3f0-4470-46e4-9c4f-36aebdea85f1" data-section-id="b87df3f0-4470-46e4-9c4f-36aebdea85f1">
+
+
+                <htmlcode id="el-37qyhqep">
+<div id="root">
+  <section id="navbar" class="fixed w-full z-50">
+    <nav class="bg-neutral-900/90 backdrop-blur-sm border-b border-neutral-800" id="el-92b8n9rd">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-nhld7t34">
+        <div class="flex items-center justify-between h-16" id="el-gh65rp51">
+          <div class="flex-shrink-0" id="el-lwzi536f">
+            <a href="#" class="text-white font-bold text-xl" id="el-tbmbh83x">unOBEDIENT</a>
+          </div>
+          
+          <!-- Desktop Menu -->
+          <div class="hidden md:block" id="el-e5yf96co">
+            <div class="ml-10 flex items-baseline space-x-8" id="el-es6b2glw">
+              <a href="#manifesto" class="text-neutral-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" id="el-uomqn1bd">Manifesto</a>
+              <a href="#solutions" class="text-neutral-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" id="el-5aijlka7">Solutions</a>
+              <a href="#community" class="text-neutral-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" id="el-8h4udkdf">Community</a>
+              <a href="#projects" class="text-neutral-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" id="el-xpot9ycy">Projects</a>
+              <a href="#impact" class="text-neutral-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" id="el-ekdquetg">Impact</a>
+              <a href="#join" class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition-colors" id="el-1gf7njox">Join Us</a>
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden" id="el-jv164xde">
+            <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="el-0rv78hln">
+              <span class="sr-only" id="el-bbrsmcq9">Open main menu</span>
+              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-dkv6fiz5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" id="el-0s8sxe9j"></path>
+              </svg>
+            </button>
+          </div>
         </div>
-        <div id="output"></div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-neutral-900 border-b border-neutral-800" id="el-ys7rwwjw">
+          <a href="#manifesto" class="text-neutral-300 hover:text-white block px-3 py-2 text-base font-medium" id="el-lg585du0">Manifesto</a>
+          <a href="#solutions" class="text-neutral-300 hover:text-white block px-3 py-2 text-base font-medium" id="el-xewvfmjg">Solutions</a>
+          <a href="#community" class="text-neutral-300 hover:text-white block px-3 py-2 text-base font-medium" id="el-gggdeovf">Community</a>
+          <a href="#projects" class="text-neutral-300 hover:text-white block px-3 py-2 text-base font-medium" id="el-qfmm1s59">Projects</a>
+          <a href="#impact" class="text-neutral-300 hover:text-white block px-3 py-2 text-base font-medium" id="el-y7qpx5bq">Impact</a>
+          <a href="#join" class="text-white bg-indigo-600 hover:bg-indigo-700 block px-3 py-2 rounded-md text-base font-medium" id="el-w87pgbqj">Join Us</a>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      // Grab HTML Elements
+      const btn = document.querySelector("button.mobile-menu-button");
+      const menu = document.querySelector("#mobile-menu");
+
+      // Add Event Listeners
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a link
+      const mobileLinks = document.querySelectorAll('#mobile-menu a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+
+      // Add scroll event for navbar background
+      const navbar = document.querySelector("#navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("animate__animated", "animate__fadeIn");
+        }
+      });
+    </script>
+  </section>
+</div>
+</htmlcode>
+              </element><element id="bd0bf2b8-1346-4dc0-8f79-1a44e181c16d" data-section-id="bd0bf2b8-1346-4dc0-8f79-1a44e181c16d">
+
+<htmlCode>
+<div id="root">
+  <section id="hero" class="h-screen relative bg-neutral-900 overflow-hidden">
+    <!-- Background Grid Pattern -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgb(64,64,64)_2px,transparent_0)] [background-size:40px_40px] opacity-30"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="relative z-10 h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="animate__animated animate__fadeInUp text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          Where <span class="text-indigo-500">Innovation</span> Meets <span class="text-indigo-500">Impact</span>
+        </h1>
+        
+        <p class="animate__animated animate__fadeInUp animate__delay-1s text-lg sm:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto">
+          A community of creative thinkers and problem solvers working unconventionally to reshape tomorrow's design solutions.
+        </p>
+        
+        <div class="animate__animated animate__fadeInUp animate__delay-2s flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#join" class="inline-flex items-center px-8 py-3 text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors duration-300">
+            Join Our Community
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#solutions" class="inline-flex items-center px-8 py-3 text-base font-medium text-white border border-neutral-700 hover:border-neutral-500 rounded-lg transition-colors duration-300">
+            Explore Solutions
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -left-10 top-1/4 w-72 h-72 bg-indigo-500/20 rounded-full filter blur-3xl animate-pulse"></div>
+      <div class="absolute -right-10 bottom-1/4 w-72 h-72 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate__animated animate__fadeIn animate__delay-3s">
+      <div class="flex flex-col items-center">
+        <span class="text-neutral-400 text-sm mb-2">Scroll to explore</span>
+        <div class="w-6 h-10 border-2 border-neutral-500 rounded-full flex justify-center p-2">
+          <div class="w-1 h-2 bg-neutral-400 rounded-full animate-bounce"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="1934355d-5fa3-4ecb-9e20-e2d4fe2ee17c" data-section-id="1934355d-5fa3-4ecb-9e20-e2d4fe2ee17c">
+
+<htmlCode>
+<div id="root">
+  <section id="manifesto" class="py-20 bg-neutral-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 animate__animated animate__fadeInUp">Our Manifesto</h2>
+        <div class="w-20 h-1 bg-indigo-600 mx-auto mb-8"></div>
+      </div>
+
+      <!-- Manifesto Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Left Column - Main Statement -->
+        <div class="space-y-8 animate__animated animate__fadeInLeft">
+          <h3 class="text-2xl md:text-3xl font-bold text-neutral-800 leading-tight">
+            We believe in the power of <span class="text-indigo-600">unconventional thinking</span> to solve conventional problems.
+          </h3>
+          
+          <p class="text-neutral-600 leading-relaxed">
+            In a world that's becoming increasingly predictable, we stand as a beacon for those who dare to think differently. Our community thrives on challenging the status quo and finding innovative solutions where others see dead ends.
+          </p>
+
+          <div class="flex items-center space-x-4">
+            <div class="h-px flex-grow bg-indigo-600"></div>
+            <span class="text-lg font-semibold text-indigo-600">Think. Create. Impact.</span>
+          </div>
+        </div>
+
+        <!-- Right Column - Key Points -->
+        <div class="space-y-6 animate__animated animate__fadeInRight">
+          <div class="bg-white p-6 rounded-lg shadow-lg transform hover:-translate-y-1 transition-transform duration-300">
+            <div class="flex items-start mb-4">
+              <div class="flex-shrink-0">
+                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 class="text-lg font-semibold text-neutral-900 mb-2">Innovation First</h4>
+                <p class="text-neutral-600">We approach every challenge with a fresh perspective, free from conventional constraints.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg transform hover:-translate-y-1 transition-transform duration-300">
+            <div class="flex items-start mb-4">
+              <div class="flex-shrink-0">
+                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 class="text-lg font-semibold text-neutral-900 mb-2">Collaborative Spirit</h4>
+                <p class="text-neutral-600">We believe in the power of diverse minds coming together to create extraordinary solutions.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg transform hover:-translate-y-1 transition-transform duration-300">
+            <div class="flex items-start mb-4">
+              <div class="flex-shrink-0">
+                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 class="text-lg font-semibold text-neutral-900 mb-2">Impact Driven</h4>
+                <p class="text-neutral-600">Every solution we create is measured by its positive impact on the world.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="3f51da72-a33e-412d-b8c5-4197d80077c0" data-section-id="3f51da72-a33e-412d-b8c5-4197d80077c0">
+
+<htmlCode>
+<div id="root">
+  <section id="solutions" class="py-20 bg-neutral-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 animate__animated animate__fadeInUp">Design Solutions</h2>
+        <div class="w-20 h-1 bg-indigo-600 mx-auto mb-8"></div>
+        <p class="text-neutral-300 text-lg max-w-2xl mx-auto animate__animated animate__fadeInUp">
+          We tackle complex challenges through innovative design thinking and creative problem-solving approaches.
+        </p>
+      </div>
+
+      <!-- Solutions Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Solution Card 1 -->
+        <div class="bg-neutral-800 rounded-xl p-6 hover:bg-neutral-700 transition-all duration-300 animate__animated animate__fadeInUp">
+          <div class="bg-indigo-600/10 rounded-lg p-4 mb-6 inline-block">
+            <svg class="w-8 h-8 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Innovation Strategy</h3>
+          <p class="text-neutral-400 mb-4">Developing frameworks and roadmaps for sustainable innovation and growth.</p>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Design Thinking
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Strategic Planning
+            </li>
+          </ul>
+        </div>
+
+        <!-- Solution Card 2 -->
+        <div class="bg-neutral-800 rounded-xl p-6 hover:bg-neutral-700 transition-all duration-300 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="bg-indigo-600/10 rounded-lg p-4 mb-6 inline-block">
+            <svg class="w-8 h-8 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Product Design</h3>
+          <p class="text-neutral-400 mb-4">Creating user-centered products that solve real-world problems effectively.</p>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              UX Research
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Prototyping
+            </li>
+          </ul>
+        </div>
+
+        <!-- Solution Card 3 -->
+        <div class="bg-neutral-800 rounded-xl p-6 hover:bg-neutral-700 transition-all duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="bg-indigo-600/10 rounded-lg p-4 mb-6 inline-block">
+            <svg class="w-8 h-8 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Digital Transformation</h3>
+          <p class="text-neutral-400 mb-4">Guiding organizations through successful digital evolution journeys.</p>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Process Design
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Implementation
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-16 animate__animated animate__fadeInUp">
+        <a href="#contact" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300">
+          Discuss Your Project
+          <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="574a8b03-21e0-4aaa-8814-0eea235d291c" data-section-id="574a8b03-21e0-4aaa-8814-0eea235d291c">
+
+<htmlCode>
+<div id="root">
+  <section id="community" class="py-20 bg-neutral-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 animate__animated animate__fadeInUp">Our Community</h2>
+        <div class="w-20 h-1 bg-indigo-600 mx-auto mb-8"></div>
+        <p class="text-neutral-600 text-lg max-w-2xl mx-auto animate__animated animate__fadeInUp">
+          Join a diverse collective of creative minds who are reshaping the future through innovative design thinking.
+        </p>
+      </div>
+
+      <!-- Community Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp">
+          <div class="text-indigo-600 mb-4">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-neutral-900 mb-4">Collaborative Network</h3>
+          <p class="text-neutral-600">Connect with like-minded innovators, share ideas, and collaborate on groundbreaking projects.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="text-indigo-600 mb-4">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-neutral-900 mb-4">Resource Library</h3>
+          <p class="text-neutral-600">Access our extensive collection of tools, frameworks, and learning materials.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="text-indigo-600 mb-4">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-neutral-900 mb-4">Global Impact</h3>
+          <p class="text-neutral-600">Be part of a worldwide movement creating positive change through design innovation.</p>
+        </div>
+      </div>
+
+      <!-- Community Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 bg-neutral-900 rounded-2xl p-8 animate__animated animate__fadeInUp">
+        <div class="text-center">
+          <div class="text-4xl font-bold text-white mb-2" id="memberCount">500+</div>
+          <p class="text-neutral-400">Active Members</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-white mb-2" id="projectCount">200+</div>
+          <p class="text-neutral-400">Projects Completed</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-white mb-2" id="countryCount">30+</div>
+          <p class="text-neutral-400">Countries</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-white mb-2" id="eventCount">100+</div>
+          <p class="text-neutral-400">Events Yearly</p>
+        </div>
+      </div>
+
+      <!-- Join CTA -->
+      <div class="text-center mt-16">
+        <a href="#join" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 animate__animated animate__fadeInUp">
+          Join Our Community
+          <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="049c632d-918a-4738-9f1d-26d9ee252f62" data-section-id="049c632d-918a-4738-9f1d-26d9ee252f62">
+
+<htmlCode>
+<div id="root">
+  <section id="projects" class="py-20 bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate__animated animate__fadeInUp">Featured Projects</h2>
+        <div class="w-20 h-1 bg-indigo-600 mx-auto mb-8"></div>
+        <p class="text-neutral-300 text-lg max-w-2xl mx-auto animate__animated animate__fadeInUp">
+          Explore our innovative solutions that are reshaping industries and challenging conventional thinking.
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project Card 1 -->
+        <div class="group relative overflow-hidden rounded-xl bg-neutral-800 animate__animated animate__fadeInUp">
+          <div class="aspect-w-16 aspect-h-9 bg-neutral-700">
+            <div class="p-8 flex items-center justify-center bg-gradient-to-br from-indigo-600/20 to-purple-600/20">
+              <svg class="w-16 h-16 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Smart City Innovation</h3>
+            <p class="text-neutral-400 mb-4">Reimagining urban spaces through sustainable design solutions.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-sm bg-neutral-700 text-neutral-300 rounded-full">Urban Design</span>
+              <span class="px-3 py-1 text-sm bg-neutral-700 text-neutral-300 rounded-full">IoT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="group relative overflow-hidden rounded-xl bg-neutral-800 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="aspect-w-16 aspect-h-9 bg-neutral-700">
+            <div class="p-8 flex items-center justify-center bg-gradient-to-br from-indigo-600/20 to-purple-600/20">
+              <svg class="w-16 h-16 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+              </svg>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Healthcare Revolution</h3>
+            <p class="text-neutral-400 mb-4">Transforming patient care through digital innovation.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-sm bg-neutral-700 text-neutral-300 rounded-full">Healthcare</span>
+              <span class="px-3 py-1 text-sm bg-neutral-700 text-neutral-300 rounded-full">AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="group relative overflow-hidden rounded-xl bg-neutral-800 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="aspect-w-16 aspect-h-9 bg-neutral-700">
+            <div class="p-8 flex items-center justify-center bg-gradient-to-br from-indigo-600/20 to-purple-600/20">
+              <svg class="w-16 h-16 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Sustainable Energy</h3>
+            <p class="text-neutral-400 mb-4">Creating eco-friendly solutions for energy consumption.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-sm bg-neutral-700 text-neutral-300 rounded-full">Green Tech</span>
+              <span class="px-3 py-1 text-sm bg-neutral-700 text-neutral-300 rounded-full">Energy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- View More Projects Button -->
+      <div class="text-center mt-12">
+        <button class="group inline-flex items-center px-8 py-3 border border-neutral-600 rounded-md text-neutral-300 hover:text-white hover:border-neutral-500 transition-colors duration-300">
+          View More Projects
+          <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="73e0a366-ca63-412c-8e95-a2b4198a9d5a" data-section-id="73e0a366-ca63-412c-8e95-a2b4198a9d5a">
+
+<htmlCode>
+<div id="root">
+  <section id="join" class="py-20 bg-neutral-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Column -->
+        <div class="animate__animated animate__fadeInLeft">
+          <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">Join Our Creative Community</h2>
+          <div class="w-20 h-1 bg-indigo-600 mb-8"></div>
+          <p class="text-neutral-600 text-lg mb-8">
+            Be part of a movement that's reshaping the future through innovative design thinking and creative problem-solving.
+          </p>
+
+          <!-- Benefits List -->
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-6 h-6 text-indigo-600">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-neutral-900">Collaborative Environment</h3>
+                <p class="text-neutral-600">Work with like-minded innovators from around the globe</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-6 h-6 text-indigo-600">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-neutral-900">Mentorship Programs</h3>
+                <p class="text-neutral-600">Learn from industry experts and grow your skills</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-6 h-6 text-indigo-600">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-neutral-900">Impact Projects</h3>
+                <p class="text-neutral-600">Work on meaningful projects that make a difference</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Application Form -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 animate__animated animate__fadeInRight">
+          <form id="joinForm" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-neutral-700">Full Name</label>
+              <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 bg-neutral-50 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all">
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-neutral-700">Email Address</label>
+              <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-neutral-50 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all">
+            </div>
+
+            <div>
+              <label for="expertise" class="block text-sm font-medium text-neutral-700">Area of Expertise</label>
+              <select id="expertise" name="expertise" required class="mt-1 block w-full px-4 py-3 bg-neutral-50 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all">
+                <option value="">Select your expertise</option>
+                <option value="design">Design</option>
+                <option value="technology">Technology</option>
+                <option value="strategy">Strategy</option>
+                <option value="research">Research</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-neutral-700">Why do you want to join?</label>
+              <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-3 bg-neutral-50 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all"></textarea>
+            </div>
+
+            <button type="submit" class="w-full px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-300 flex items-center justify-center space-x-2">
+              <span>Submit Application</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
 
     <script>
-        function showMotivation() {
-            const quotes = [
-                "Believe you can and you're halfway there.",
-                "Every day may not be good, but there's something good in every day.",
-                "You are stronger than you think.",
-                "The future depends on what you do today.",
-                "Keep going. You’re getting there."
-            ];
-            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-            const userInput = document.getElementById('dayInput').value.trim();
-
-            if (userInput) {
-                document.getElementById('output').innerHTML = 
-                    `Thanks for sharing! Here's a motivation for you:<br><strong>${randomQuote}</strong>`;
-            } else {
-                document.getElementById('output').innerHTML = 
-                    `<span style="color: red;">Please share something about your day first!</span>`;
-            }
-        }
-
-        function closeApp() {
-            alert("This app can't directly close your browser tab. Please close it manually!");
-        }
+      const form = document.getElementById('joinForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Thank you for your interest! We will get back to you soon.');
+        form.reset();
+      });
     </script>
-</body>
-</html>
+  </section>
+</div>
+</htmlCode></element><element id="f45112e7-d52b-41e2-94b7-ce2074bdf541" data-section-id="f45112e7-d52b-41e2-94b7-ce2074bdf541">
+
+<htmlCode>
+<div id="root">
+  <section id="impact" class="py-20 bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate__animated animate__fadeInUp">Our Global Impact</h2>
+        <div class="w-20 h-1 bg-indigo-600 mx-auto mb-8"></div>
+        <p class="text-neutral-300 text-lg max-w-2xl mx-auto animate__animated animate__fadeInUp">
+          Making meaningful change through innovative design solutions across industries and continents.
+        </p>
+      </div>
+
+      <!-- Impact Metrics -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div class="bg-neutral-800 rounded-xl p-8 text-center animate__animated animate__fadeInUp">
+          <div class="text-indigo-500 text-4xl font-bold mb-2" data-count="150">0</div>
+          <div class="text-neutral-300">Communities Impacted</div>
+        </div>
+        <div class="bg-neutral-800 rounded-xl p-8 text-center animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="text-indigo-500 text-4xl font-bold mb-2" data-count="45">0</div>
+          <div class="text-neutral-300">Countries Reached</div>
+        </div>
+        <div class="bg-neutral-800 rounded-xl p-8 text-center animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="text-indigo-500 text-4xl font-bold mb-2" data-count="500">0</div>
+          <div class="text-neutral-300">Solutions Deployed</div>
+        </div>
+        <div class="bg-neutral-800 rounded-xl p-8 text-center animate__animated animate__fadeInUp animate__delay-3s">
+          <div class="text-indigo-500 text-4xl font-bold mb-2" data-count="1000">0</div>
+          <div class="text-neutral-300">Lives Changed</div>
+        </div>
+      </div>
+
+      <!-- Impact Areas -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-neutral-800 rounded-xl p-8 hover:bg-neutral-700 transition-colors duration-300 animate__animated animate__fadeInUp">
+          <div class="bg-indigo-600/10 rounded-full p-3 w-16 h-16 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">Environmental Impact</h3>
+          <p class="text-neutral-400">Creating sustainable solutions that protect and preserve our planet for future generations.</p>
+        </div>
+
+        <div class="bg-neutral-800 rounded-xl p-8 hover:bg-neutral-700 transition-colors duration-300 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="bg-indigo-600/10 rounded-full p-3 w-16 h-16 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">Social Innovation</h3>
+          <p class="text-neutral-400">Empowering communities through accessible and inclusive design solutions.</p>
+        </div>
+
+        <div class="bg-neutral-800 rounded-xl p-8 hover:bg-neutral-700 transition-colors duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="bg-indigo-600/10 rounded-full p-3 w-16 h-16 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">Economic Growth</h3>
+          <p class="text-neutral-400">Fostering innovation that drives sustainable economic development worldwide.</p>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center animate__animated animate__fadeInUp">
+        <a href="#join" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300">
+          Be Part of Our Impact
+          <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // Animate count up when section is in view
+      const counters = document.querySelectorAll('[data-count]');
+      
+      const animateCount = (el) => {
+        const target = parseInt(el.getAttribute('data-count'));
+        const count = parseInt(el.innerText);
+        const increment = target / 50;
+        
+        if(count < target) {
+          el.innerText = Math.ceil(count + increment);
+          setTimeout(() => animateCount(el), 40);
+        } else {
+          el.innerText = target;
+        }
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            counters.forEach(counter => animateCount(counter));
+          }
+        });
+      });
+
+      observer.observe(document.querySelector('#impact'));
+    </script>
+  </section>
+</div>
+</htmlCode></element><element id="fb90a1e2-4e87-430e-a440-ec41b11372db" data-section-id="fb90a1e2-4e87-430e-a440-ec41b11372db">
+
+
+                <htmlcode id="el-fv25ztao">
+<div id="root">
+  <section id="contact" class="py-20 bg-neutral-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-j1g4a2m7">
+      <!-- Section Header -->
+      <div class="text-center mb-16" id="el-l6n5gay5">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 animate__animated animate__fadeInUp" id="el-q23aytcw">Get in Touch</h2>
+        <div class="w-20 h-1 bg-indigo-600 mx-auto mb-8" id="el-15jlcveg"></div>
+        <p class="text-neutral-600 text-lg max-w-2xl mx-auto animate__animated animate__fadeInUp" id="el-kbu66avn">
+          Have a project in mind? Let's discuss how we can bring innovation to your challenges.
+        </p>
+      </div>
+
+      <!-- Contact Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" id="el-nykjhet4">
+        <!-- Contact Info -->
+        <div class="lg:col-span-1 space-y-8 animate__animated animate__fadeInLeft" id="el-4e01l1fl">
+          <!-- Contact Card 1 -->
+          <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300" id="el-iy852i7s">
+            <div class="flex items-start" id="el-7x3m9khm">
+              <div class="flex-shrink-0" id="el-qo592p8u">
+                <div class="bg-indigo-100 rounded-lg p-3" id="el-fm58hjsw">
+                  <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-m7g51dlc">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" id="el-mfytiic9"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4" id="el-s1ae9d43">
+                <h3 class="text-lg font-semibold text-neutral-900" id="el-fgq10p65">Email Us</h3>
+                <p class="mt-1 text-neutral-600" id="el-36i3ioj2">hello@unobedient.design</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Card 2 -->
+          <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300" id="el-g96gkw80">
+            <div class="flex items-start" id="el-u2jl4g66">
+              <div class="flex-shrink-0" id="el-qcy6xgu7">
+                <div class="bg-indigo-100 rounded-lg p-3" id="el-mzn158ez">
+                  <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-xtxggowq">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" id="el-fp1ic4sg"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" id="el-zi7izjr0"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4" id="el-eb41jocr">
+                <h3 class="text-lg font-semibold text-neutral-900" id="el-b9lq1fa9">Location</h3>
+                <p class="mt-1 text-neutral-600" id="el-gmm4ny15">Always ahead of the curve</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="bg-white rounded-xl p-6 shadow-lg" id="el-nza46x5p">
+            <h3 class="text-lg font-semibold text-neutral-900 mb-4" id="el-but8sgru">Connect With Us</h3>
+            <div class="flex space-x-4" id="el-jidjko7m">
+              <a href="#" class="bg-neutral-100 p-3 rounded-lg hover:bg-neutral-200 transition-colors duration-300" id="el-fgqkc7zq">
+                <svg class="w-5 h-5 text-neutral-700" fill="currentColor" viewBox="0 0 24 24" id="el-8mqg6hi4">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" id="el-4m3ao2ek"></path>
+                </svg>
+              </a>
+              <a href="#" class="bg-neutral-100 p-3 rounded-lg hover:bg-neutral-200 transition-colors duration-300" id="el-5ni2b0ut">
+                <svg class="w-5 h-5 text-neutral-700" fill="currentColor" viewBox="0 0 24 24" id="el-t1xufoaw">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" id="el-4fuu9f8z"></path>
+                </svg>
+              </a>
+              <a href="#" class="bg-neutral-100 p-3 rounded-lg hover:bg-neutral-200 transition-colors duration-300" id="el-sk0choom">
+                <svg class="w-5 h-5 text-neutral-700" fill="currentColor" viewBox="0 0 24 24" id="el-uupzl3o1">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" id="el-hleq5o4e"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-2 bg-white rounded-xl shadow-lg p-8 animate__animated animate__fadeInRight" id="el-kig2ngkl">
+          <form id="contactForm" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="el-64h5fkbg">
+              <div id="el-ouvih0zx">
+                <label for="name" class="block text-sm font-medium text-neutral-700" id="el-uz4fnux1">Name</label>
+                <input type="text" id="name" name="name" required="" class="mt-1 block w-full px-4 py-3 bg-neutral-50 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all">
+              </div>
+              <div id="el-ufvrto0n">
+                <label for="email" class="block text-sm font-medium text-neutral-700" id="el-7r80dy35">Email</label>
+                <input type="email" id="email" name="email" required="" class="mt-1 block w-full px-4 py-3 bg-neutral-50 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all">
+              </div>
+            </div>
+
+            <div id="el-7b3x5zcw">
+              <label for="subject" class="block text-sm font-medium text-neutral-700" id="el-umqtops9">Subject</label>
+              <input type="text" id="subject" name="subject" required="" class="mt-1 block w-full px-4 py-3 bg-neutral-50 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all">
+            </div>
+
+            <div id="el-zrt68tbh">
+              <label for="message" class="block text-sm font-medium text-neutral-700" id="el-zrykf1zb">Message</label>
+              <textarea id="message" name="message" rows="6" required="" class="mt-1 block w-full px-4 py-3 bg-neutral-50 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all"></textarea>
+            </div>
+
+            <button type="submit" class="w-full px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-300 flex items-center justify-center" id="el-oxqi6nxp">
+              Send Message
+              <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-8q7g68zk">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" id="el-3dndqiqu"></path>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const contactForm = document.getElementById('contactForm');
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Thank you for your message! We will get back to you soon.');
+        contactForm.reset();
+      });
+    </script>
+  </section>
+</div>
+</htmlcode>
+              </element><element id="94d5cb5d-75cd-4260-8f55-55933ae78d0c" data-section-id="94d5cb5d-75cd-4260-8f55-55933ae78d0c">
+
+
+                <htmlcode id="el-uvne4m1i">
+<div id="root">
+  <section id="footer" class="bg-neutral-900 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-qcrmc1jf">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-neutral-800" id="el-cnp4r3u6">
+        <!-- Brand Column -->
+        <div class="col-span-1 md:col-span-2" id="el-bam6p8j4">
+          <h3 class="text-xl font-bold text-white mb-4" id="el-t5vcdo92">unOBEDIENT</h3>
+          <p class="text-neutral-400 mb-6 max-w-md" id="el-6kjki1jo">
+            Building a community of creative thinkers and problem solvers to drive innovation and create meaningful impact through design.
+          </p>
+          <div class="flex space-x-4" id="el-s90nmx3n">
+            <a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-uktwd4iy">
+              <span class="sr-only" id="el-coc03enp">Facebook</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" id="el-xkwu6q7w">
+                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" id="el-8aefai5r"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-dstl5ski">
+              <span class="sr-only" id="el-ezdp2ewo">Twitter</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" id="el-dpoobdrl">
+                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" id="el-e4rb5jje"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-zsqd68e1">
+              <span class="sr-only" id="el-47kc1vo5">LinkedIn</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" id="el-luu5fpri">
+                <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" id="el-zvventjl"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div id="el-9d0qgnl2">
+          <h4 class="text-white font-semibold mb-4" id="el-4lk2x8jc">Quick Links</h4>
+          <ul class="space-y-2" id="el-mtkl2cg6">
+            <li id="el-cxr36eet"><a href="#manifesto" class="text-neutral-400 hover:text-white transition-colors" id="el-jr9sz573">Manifesto</a></li>
+            <li id="el-t88rpvxu"><a href="#solutions" class="text-neutral-400 hover:text-white transition-colors" id="el-ww9m0clg">Solutions</a></li>
+            <li id="el-o3qqbbc3"><a href="#community" class="text-neutral-400 hover:text-white transition-colors" id="el-rg6kcstu">Community</a></li>
+            <li id="el-covg9iwr"><a href="#projects" class="text-neutral-400 hover:text-white transition-colors" id="el-xy6we6e1">Projects</a></li>
+            <li id="el-g44fyb3c"><a href="#impact" class="text-neutral-400 hover:text-white transition-colors" id="el-umhc765y">Impact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div id="el-ftyi3gis">
+          <h4 class="text-white font-semibold mb-4" id="el-mpv23lql">Contact</h4>
+          <ul class="space-y-2" id="el-m9m9b468">
+            <li class="text-neutral-400" id="el-xy451eg0">
+              <a href="mailto:hello@thinklab.design" class="hover:text-white transition-colors" id="el-hqjw04qd">
+                hello@thinklab.design
+              </a>
+            </li>
+            <li class="text-neutral-400" id="el-5qq4phio">
+              Innovation Hub<br id="el-oxmcuxi6">
+              Silicon Valley<br id="el-u7orrld5">
+              California, USA
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center" id="el-sc85126d">
+        <p class="text-neutral-400 text-sm mb-4 md:mb-0" id="el-g13bu76w">© 2025 unOBEDIENT. All rights reserved</p>
+        <div class="flex space-x-6" id="el-bztizlyz">
+          <a href="#" class="text-neutral-400 hover:text-white text-sm transition-colors" id="el-a6ekvazx">Privacy Policy</a>
+          <a href="#" class="text-neutral-400 hover:text-white text-sm transition-colors" id="el-luz9ge1u">Terms of Service</a>
+          <a href="#" class="text-neutral-400 hover:text-white text-sm transition-colors" id="el-c9qmluea">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlcode>
+              </element>
+            <div id="page_complete">
+            <script>
+                console.log('Page complete');
+            </script>
+            </body>
+            </html>
+          
